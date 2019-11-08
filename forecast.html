@@ -1,0 +1,504 @@
+<html>
+ <head>
+  </title>
+  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Expires" CONTENT="-1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <!-- <script type="text/javascript" src="/json.js"></script> -->
+
+<script src="/code/highcharts.js"></script>
+<script src="/code/modules/series-label.js"></script>
+<script src="/code/modules/exporting.js"></script>
+<script src="/code/modules/export-data.js"></script>
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+
+<style type="text/css">
+  #container {
+    min-width: 320px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  .col-sm-1
+{
+  border-top:01px dashed #333;
+  border-right:01px dashed #333;
+  border-bottom: 01px dashed #3c3b3f;
+}body
+{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+
+}
+      </style>
+      
+
+<!-- Script to get JSON file and display its content --> 
+<script language=" JavaScript" >
+    
+    function LoadOnce() 
+    { 
+    window.location.reload(); 
+    } 
+</script>
+</head>
+<body onLoad="Loadonce();">
+
+  <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-brand" style="color:#fff;" href="#">Weather App</p>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            
+            <ul class="nav navbar-nav navbar-right" >
+              <li style="padding-top:05px;"><a href="/" style="color:#fff;"><span class="glyphicon glyphicon-user"></span> Home</a></li>
+              
+            </ul>
+          </div>
+        </div>
+  </nav>  
+<div class="col-md-4">
+    <div class="card">
+        <h3 class="text-muted abc" style="padding-top:20px;padding-left:05px;"> Weather Condition In </h3>
+            <div class="row">
+              <div class="col-sm-4">
+              <h3 class="text-muted bold bcd text-right " style="padding-top:06px;" > </h3>
+              </div>
+              <div class="col-sm-6">
+                      <h3 class="text-muted bold bcd1 text-left" style="padding-top:01px;" > </h3>
+              </div>
+              <div class="col-sm-12"><h3 class="text-muted desc"> Weather Condition  Is </h3></div>
+              <div class="col-sm-12">
+                <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                  <th>Parameters</th>
+                  <th>Values</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                  <td>Wind</td>
+                  <td id="wind"></td>
+                  </tr>
+                  <tr>
+                  <td>cloudiness</td>
+                  <td id="cloudiness"></td>
+                  </tr>
+                  <tr>
+                  <td>Pressure</td>
+                  <td id="pressure"></td>
+                  </tr>
+                  <tr>
+                  <td>Humidity</td>
+                  <td id="humidity"></td>
+                  </tr>
+                  <tr>
+                  <td>Min Temp.</td>
+                  <td id="min"></td>
+                  </tr>
+                  <tr>
+                  <td>Max Temp.</td>
+                  <td id="max"></td>
+                  </tr>
+                  </tbody>
+                      </table>
+                  
+              </div>
+              
+          
+                  </div>
+    </div>
+</div>
+<div class="col-md-8">
+    <div class="row">
+      <div class="col-md-12" style="margin-bottom:20px;margin-top:20px;">
+        <div class="card">
+          <div id="container" style="border-radius:04px;">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <div class="card">
+              <div class="row">
+                <div class="col-md-12 rjp text-center">
+                  <h3 class="text-muted">5 Days Weather Forecast</h3>
+                    <div class="col-sm-1" style="border-left:01px dashed #333;">
+                      
+                        <p>Date And Time</p>
+                        <p>icon</p>
+                        
+                        <p style="padding-top:10px;">Temp.</p>
+                        <p>wind</p>
+                      </div>
+                    
+  
+                </div>
+              </div>
+              
+            </div>
+      </div>
+    </div>
+    
+</div> 
+
+<div class="col-sm-12 text-center" style="padding-top:30px;padding-bottom:50px;">
+  <div class="card">
+    <br>
+    <h1 class="text-muted">Nearby Locations</h1>
+  
+    <br><br>
+    <div class="col-sm-3">
+        <div class="card">
+            <div class="row">
+                <div class="part-1">
+                    <div class="col-sm-6">
+                        <h3 style="color:#fff;padding-top:15px;">Phagwara</h3>
+                    </div>
+                    <div class="col-sm-6">
+                            <img src="https://openweathermap.org/img/wn/01d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                    </div>
+                </div>
+                
+                <div class="col-sm-6" >
+                    <h1>23 *c</h1>
+                    <h3 class="text-muted">Sunny</h3>
+                </div>
+                <div class="col-sm-6" style="border-left:01px solid #333;">
+                        <h4> Feels Like </h4>
+                        <span> Temp  : 23&#8451; </span><br>
+                        <span> Wind  : 6km/h</span><br>
+                        <span> Pressure : 29 hpa</span><br>
+                        <span> Humidity : 59%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+            <div class="card">
+                <div class="row">
+                    <div class="part-1">
+                        <div class="col-sm-6">
+                            <h3 style="color:#fff;padding-top:15px;">Ludhiana</h3>
+                        </div>
+                        <div class="col-sm-6">
+                                <img src="https://openweathermap.org/img/wn/01d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6" >
+                        <h1>23*c</h1>
+                        <h3 class="text-muted">Sunny</h3>
+                    </div>
+                    <div class="col-sm-6" style="border-left:01px solid #333;">
+                            <h4> Feels Like </h4>
+                            <span> Temp  : 23&#8451; </span><br>
+                            <span> Wind  : 8km/h</span><br>
+                            <span> Pressure : 29 hpa</span><br>
+                            <span> Humidity : 57%</span>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="col-sm-3">
+                <div class="card">
+                    <div class="row">
+                        <div class="part-1">
+                            <div class="col-sm-6">
+                                <h3 style="color:#fff;padding-top:15px;">Amritsar</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                    <img src="https://openweathermap.org/img/wn/04d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6" >
+                            <h1>21*c</h1>
+                            <h3 class="text-muted"> Clouds</h3>
+                        </div>
+                        <div class="col-sm-6" style="border-left:01px solid #333;">
+                                <h4> Feels Like </h4>
+                                <span> Temp  : 21&#8451; </span><br>
+                                <span> Wind  : 10km/h</span><br>
+                                <span> Pressure : 26 hpa</span><br>
+                                <span> Humidity : 62%</span>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <div class="col-sm-3">
+                    <div class="card">
+                        <div class="row">
+                            <div class="part-1">
+                                <div class="col-sm-6">
+                                    <h3 style="color:#fff;padding-top:15px;">Ambala</h3>
+                                </div>
+                                <div class="col-sm-6">
+                                        <img src="https://openweathermap.org/img/wn/10d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6" >
+                                <h1>24 *c</h1>
+                                <h3 class="text-muted">Sunny</h3>
+                            </div>
+                            <div class="col-sm-6" style="border-left:01px solid #333;">
+                                    <h4> Feels Like </h4>
+                                    <span> Temp  : 24&#8451; </span><br>
+                                    <span> Wind  : 6km/h</span><br>
+                                    <span> Pressure : 26 hpa</span><br>
+                                    <span> Humidity : 60%</span>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+
+
+
+    <div id="day12"></div> 
+  </div>
+</div>
+
+
+
+
+
+
+
+                 
+                
+                  
+
+</script>      
+
+                  <script type="text/javascript">
+                  $.ajaxSetup({
+                      async: false
+                  });
+                    var day= [];
+                    var temp = [];
+                  
+                  $.getJSON('/json_demo.json', function(emp) { 
+                    $('#name').html(emp.list[0].dt_txt);
+                    let v = 8;
+                    
+                    for(let i=0;i<5;i++)
+                    {
+                      if(i==0)
+                      {
+                        v=0;
+                      }
+                      else
+                      {
+                        v=(8*i)-1;
+                  
+                      }
+                      
+                      console.log(`temp : ${emp.list[v].main.temp}`);
+                      console.log(`condition ${emp.list[v].weather[0].main} and details is ${emp.list[v].weather[0].description}`);
+                      day[i] = emp.list[v].dt_txt;
+                    
+                      temp[i] = (parseInt(emp.list[v].main.temp)/10);
+                    
+                    
+                    }
+                    for(i=0;i<5;i++)
+                    {
+                      $('.day12').append(`<p>${day[i]}</p>`);
+                      $('.temp12').append(`<p>${temp[i]}</p>`);
+                  
+                    }
+                     console.log(`${emp.list[0].weather[0].icon}`);
+                     
+                    
+                    $('.abc').append(emp.city.name); 
+                    $('.bcd').append(`<img style="height:80px;width:80px;" src="https://openweathermap.org/img/wn/${emp.list[0].weather[0].icon}@2x.png">`);
+                    $('.bcd1').append(`<h2 class="text-muted bold">${parseInt((emp.list[0].main.temp)/10)}&#8451</h2>`);
+                    // $('#display').append('<p> Company: ' + emp.company+ '</p>'); 
+                    $('.desc').append(emp.list[0].weather[0].description);
+                    $('#wind').append(emp.list[0].wind.speed);
+                    $('#cloudiness').append(emp.list[0].weather[0].main);
+                    $('#pressure').append(emp.list[0].main.pressure);
+                    $('#humidity').append(emp.list[0].main.humidity);
+                    $('#min').append(parseInt(emp.list[0].main.temp_min/10));
+                    $('#max').append(parseInt(emp.list[0].main.temp_max)/10);
+                  
+                    for(let i=0;i<=10;i++)
+                    {
+                      if(i==0)
+                      {
+                        v=0;
+                      }
+                      else
+                      {
+                        v=(5*i)-1;
+                  
+                      }
+                      $('.rjp').append(`<div class="col-sm-1" style="padding-left:02px;"><span>${emp.list[v].dt_txt}</span><p><img height="40px;" width="40px;" src="https://openweathermap.org/img/wn/${emp.list[0].weather[0].icon}@2x.png"></p><p>${parseInt(emp.list[v].main.temp)/10}.c</p><p>${emp.list[0].wind.speed}</p></div>`);
+                    }   
+                  }); 
+                  document.getElementById('day12').innerHTML = '...';
+                  
+                  
+                  Highcharts.chart('container', {
+                    chart: {
+                        zoomType: 'xy'
+                    },
+                    title: {
+                        text: 'Average Monthly Weather Data',
+                        align: 'center'
+                    },
+                    subtitle: {
+                        text: '',
+                        align: 'left'
+                    },
+                    xAxis: [{
+                        categories: [ 1, 2, 3, 4, 5],
+                        crosshair: true
+                    }],
+                    yAxis: [{ // Primary yAxis
+                        labels: {
+                            format: '{value}°C',
+                            style: {
+                                color: Highcharts.getOptions().colors[2]
+                            }
+                        },
+                        title: {
+                            text: 'Temperature',
+                            style: {
+                                color: Highcharts.getOptions().colors[2]
+                            }
+                        },
+                        opposite: true
+                  
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: '',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        },
+                        labels: {
+                            format: '{value} mm',
+                            style: {
+                                color: Highcharts.getOptions().colors[0]
+                            }
+                        }
+                  
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Sea-Level Pressure',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        labels: {
+                            format: '{value} mb',
+                            style: {
+                                color: Highcharts.getOptions().colors[1]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    tooltip: {
+                        shared: true
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'left',
+                        x: 80,
+                        verticalAlign: 'top',
+                        y: 55,
+                        floating: true,
+                        backgroundColor:
+                            Highcharts.defaultOptions.legend.backgroundColor || // theme
+                            'rgba(255,255,255,0.25)'
+                    },
+                    series: [{
+                        name: 'Rainfall',
+                        type: 'column',
+                        yAxis: 1,
+                        //data: [49.9, 71.5, 106.4, 129.2, 144.0],
+                        tooltip: {
+                            valueSuffix: ' mm'
+                        }
+                  
+                    }, {
+                        name: 'Sea-Level Pressure',
+                        type: 'spline',
+                        yAxis: 2,
+                        data: [1016, 1016, 1015.9, 1015.5, 1012.3],
+                        marker: {
+                            enabled: false
+                        },
+                        dashStyle: 'shortdot',
+                        tooltip: {
+                            valueSuffix: ' mb'
+                        }
+                  
+                    }, {
+                        name: 'Temperature',
+                        type: 'spline',
+                        data: [ 7.6, 6.9, 9.5, 14.5, 18.2],
+                        tooltip: {
+                            valueSuffix: ' °C'
+                        }
+                    }],
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    floating: false,
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom',
+                                    x: 0,
+                                    y: 0
+                                },
+                                yAxis: [{
+                                    labels: {
+                                        align: 'right',
+                                        x: 0,
+                                        y: -6
+                                    },
+                                    showLastLabel: false
+                                }, {
+                                    labels: {
+                                        align: 'left',
+                                        x: 0,
+                                        y: -6
+                                    },
+                                    showLastLabel: false
+                                }, {
+                                    visible: false
+                                }]
+                            }
+                        }]
+                    }
+                  });
+                  
+                  </script>
+
+ </body>
+</html>

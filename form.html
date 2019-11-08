@@ -1,0 +1,424 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="/particles.js"></script>
+
+<script src="/app.js"></script>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<style>
+body  {
+    font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+</style>
+    
+    </head>
+    <body>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <h5 class="navbar-brand" style="color:#fff;" href="#">Weather App</h5>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="pp"><a href="#avg" style="color:#fff;"><span class="glyphicon glyphicon-user"></span> Average Temp</a></li>
+                  <li class="pp"><a href="#feat" style="color:#fff;"><span class="glyphicon glyphicon-log-in"></span> Features</a></li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <div class="col-sm-12 text-center back2">
+        
+            <div id="particles-js" style="z-index:-1!important;"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center" style="margin-top:-30%;">
+                    
+                    <h1 class="text-warning">Check weather forecast and many more....</h1>
+                    <h1 class="text-warning">Find the most accurate weather report </h1>
+                    
+            </br></br>
+                    
+                    <form class="form-inline" action='/abc' method="POST">
+        
+                        <div class="form-group">
+                                <input class="form-control" style="height:40px;display:inline-block;" placeholder="enter location" type="text" name='name1'>
+                        
+                                <button type="submit" class="form-control zrc" style="height:40px;color:#fff;"  name="submit">Search</button>
+                
+                        </div>
+                        
+                    </form>
+            </div>
+            
+                
+    
+        </div>
+        <section id="team" class="pt-5 pb-5">
+                <div class="container">
+                    <h5 class="section-title h1" style="color:#0F2027;">Hill stations near you</h5>
+                    <div class="row">
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <img class="card-img-top img- fluid" src="/ma.jpg" alt="card image">
+                                                <span class="card-title h2">Shimla</span>
+                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                      <div class="card">
+                                <!-- <img class="card-img-top" src="img/courses/4.jpg" alt="Card image cap" style="height:120px;"> -->
+                                
+                                <div class="card-body">
+                                    <div class="row" style="padding-top:10px !important; ">
+                                        <div class="col-sm-6 text-center" style="border-right:01px solid red;">
+                                                <h3 class="text-center" style="font-family: Times New Roman;font-size: bold;color:#333;">Manali</h3>
+                                                <span><img src="https://openweathermap.org/img/wn/04d@2x.png" style="heigth:104px;width:104px;border-radius:50%;"></span>
+                                                <h3 class="text-muted">9&#8451;</h3>
+                
+                        
+                                        </div>
+                                        <div class="col-sm-6" style="padding-top:20px;">
+                        
+                                            <h4> Feels Like  Partly Cloudy </h4>
+                                            <br>
+                                            <p>
+                                            <span> Temp  : 10&#8451; </span><br>
+                                            <span> Wind  : 5km/h</span><br>
+                                            <span> Pressure : 29 hpa</span><br>
+                                            <span> Humidity : 65%</span></p>
+                
+                        
+                        
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                        
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <img class="card-img-top img- fluid" src="/manali.jpg" alt="card image">
+                                                <span class="card-title h2">Manali</span>
+                                                
+                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                      <div class="card">
+                                <!-- <img class="card-img-top" src="img/courses/4.jpg" alt="Card image cap" style="height:120px;"> -->
+                                
+                                <div class="card-body">
+                                    <div class="row" style="padding-top:10px !important; ">
+                                        <div class="col-sm-6 text-center" style="border-right:01px solid red;">
+                                                <h3 class="text-center" style="font-family: Times New Roman;font-size: bold;color:#333;">Manali</h3>
+                                                <span><img src="https://openweathermap.org/img/wn/04d@2x.png" style="heigth:104px;width:104px;border-radius:50%;"></span>
+                                                <h3 class="text-muted">9&#8451;</h3>
+                
+                        
+                                        </div>
+                                        
+                                        <div class="col-sm-6" style="padding-top:20px;">
+                        
+                                                <h4> Feels Like  Mostly Cloudy </h4>
+                                                <br>
+                                                <p>
+                                                <span> Temp  : 9&#8451; </span><br>
+                                                <span> Wind  : 8km/h</span><br>
+                                                <span> Pressure : 29 hpa</span><br>
+                                                <span> Humidity : 83%</span></p>
+                    
+                            
+                            
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                        
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card" style="padding-bottom:00px;">
+                                            <div class="card-body text-center">
+                                                <img class="card-img-top img- fluid" src="/gulmarg.jpg" alt="card image">
+                                                 <span class="card-title h2">Gulmarg</span>
+                                                
+                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                      <div class="card">
+                                <!-- <img class="card-img-top" src="img/courses/4.jpg" alt="Card image cap" style="height:120px;"> -->
+                                
+                                <div class="card-body">
+                                    <div class="row" style="padding-top:10px !important; ">
+                                        <div class="col-sm-6 text-center" style="border-right:01px solid red;">
+                                                <h3 class="text-center" style="font-family: Times New Roman;font-size: bold;color:#333;">Manali</h3>
+                                                <span><img src="https://openweathermap.org/img/wn/01d@2x.png" style="heigth:104px;width:104px;border-radius:50%;"></span>
+                                                <h3 class="text-muted">1&#8451;</h3>
+                
+                        
+                                        </div>
+                                        <div class="col-sm-6" style="padding-top:20px;">
+                        
+                                            <h4> Feels Like  Sunny </h4>
+                                            <br>
+                                            <p>
+                                            <span> Temp  : 1&#8451; </span><br>
+                                            <span> Wind  : 6km/h</span><br>
+                                            <span> Pressure : 29 hpa</span><br>
+                                            <span> Humidity : 85%</span></p>
+                
+                        
+                        
+                                        </div>
+                                    </div>
+                                </div> 
+                                
+                        
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+        <div class="col-md-12 text-center part-2"  style="padding-bottom:30px;padding-left:20px;padding-right:20px;">
+                <div id="feat">
+      
+                <h1 style="color:#fff;">Our Features</h1>
+                <br><br>
+                <div class="col-sm-4 bullets">
+                  <h3>Live Weather Forecast</h3>
+                  <h4>At Weatherapp You Can Find Live Forecast Of weather Condition Of any City Around The Globe</h4>
+                </div>
+                <div class="col-sm-4 bullets">
+                    <h3>5 Days 3 Hours</h3>
+                    <h4>Get The Weather Forecast Of 5 Days Every 3 Hours which include Temp , pressure ,humidity etc. </h4>
+                </div>
+                <div class="col-sm-4 bullets">
+                    <h3>99.99% Acurracy And Availability</h3>
+                    <h4>At Weatherapp You Believe in Delivering the Most Accurate Data And The Most Reliable One among all</h4>
+                  
+                </div>
+                </div>
+      
+      
+        </div>
+        <div class="col-sm-12 text-center" style="padding-top:30px;padding-bottom:50px;background-color:rgba(0,0,0,0.05);">
+                <h1 class="text-muted">NEARBY LOCATIONS</h1>
+                <br><br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="row">
+                            <div class="part-1">
+                                <div class="col-sm-6">
+                                    <h3 style="color:#fff;padding-top:15px;">Phagwara</h3>
+                                </div>
+                                <div class="col-sm-6">
+                                        <img src="https://openweathermap.org/img/wn/01d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6" >
+                                <h1>23 *c</h1>
+                                <h3 class="text-muted">Sunny</h3>
+                            </div>
+                            <div class="col-sm-6" style="border-left:01px solid #333;">
+                                    <h4> Feels Like </h4>
+                                    <span> Temp  : 23&#8451; </span><br>
+                                    <span> Wind  : 6km/h</span><br>
+                                    <span> Pressure : 29 hpa</span><br>
+                                    <span> Humidity : 59%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                        <div class="card">
+                            <div class="row">
+                                <div class="part-1">
+                                    <div class="col-sm-6">
+                                        <h3 style="color:#fff;padding-top:15px;">Ludhiana</h3>
+                                    </div>
+                                    <div class="col-sm-6">
+                                            <img src="https://openweathermap.org/img/wn/01d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6" >
+                                    <h1>23*c</h1>
+                                    <h3 class="text-muted">Sunny</h3>
+                                </div>
+                                <div class="col-sm-6" style="border-left:01px solid #333;">
+                                        <h4> Feels Like </h4>
+                                        <span> Temp  : 23&#8451; </span><br>
+                                        <span> Wind  : 8km/h</span><br>
+                                        <span> Pressure : 29 hpa</span><br>
+                                        <span> Humidity : 57%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="part-1">
+                                        <div class="col-sm-6">
+                                            <h3 style="color:#fff;padding-top:15px;">Amritsar</h3>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <img src="https://openweathermap.org/img/wn/04d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-6" >
+                                        <h1>21*c</h1>
+                                        <h3 class="text-muted"> Clouds</h3>
+                                    </div>
+                                    <div class="col-sm-6" style="border-left:01px solid #333;">
+                                            <h4> Feels Like </h4>
+                                            <span> Temp  : 21&#8451; </span><br>
+                                            <span> Wind  : 10km/h</span><br>
+                                            <span> Pressure : 26 hpa</span><br>
+                                            <span> Humidity : 62%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                                <div class="card">
+                                    <div class="row">
+                                        <div class="part-1">
+                                            <div class="col-sm-6">
+                                                <h3 style="color:#fff;padding-top:15px;">Ambala</h3>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                    <img src="https://openweathermap.org/img/wn/10d@2x.png" style="heigth:104px;width:104px;border-radius:50%;">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-sm-6" >
+                                            <h1>24 *c</h1>
+                                            <h3 class="text-muted">Sunny</h3>
+                                        </div>
+                                        <div class="col-sm-6" style="border-left:01px solid #333;">
+                                                <h4> Feels Like </h4>
+                                                <span> Temp  : 24&#8451; </span><br>
+                                                <span> Wind  : 6km/h</span><br>
+                                                <span> Pressure : 26 hpa</span><br>
+                                                <span> Humidity : 60%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        </div>      
+        
+            <div class="col-md-12 text-center" style="background-color:rgba(0,0,0,0.01);">
+
+            <div class="row">
+                <div class="col-sm-6 text-left " style="padding-top:20px;" >
+                    <h2 style="font-weight:500;"> India And Its Neibouring Countries Average Temperature</h2>
+                    <br>
+                    <h4> The climate is warm and temperate in Asia. The rainfall in Asia is significant, with precipitation even during the driest month.The average annual temperature is 13.8 °C in Asia.</h4>
+                    <h4>The driest month is January, with 45 mm of rainfall. In November, the precipitation reaches its peak, with an average of 84 mm.</h4>
+                    <h4>The warmest month of the year is July, with an average temperature of 24.4 °C. At 2.4 °C on average, January is the coldest month of the year.
+
+                        </h4>
+                </div>
+                <div class="col-sm-6">
+                        <div id="avg">
+                                <div class="card">
+                                      <div id="geochart-colors" style="width: 90%; height: 380px;margin-left:5%;"></div>
+                                </div>
+                          </div>
+
+                </div>
+            </div>
+          
+        </div>
+        
+        
+          
+
+    
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country',   'Temperature'],
+          ['India', 35], ['Saudi Arabia', 18], ['Benin', 6], ['Botswana', -24],
+          ['Pakistan', 31], ['', -3], ['Laos', 3],
+          ['Oman', 35], ['yemen', 15],
+          ['Sri Lanka', 27], ['Ceuta', 35], ['Chad', 12],
+          ['Afghanistan', 20], ['Cote d\'Ivoire', 6],
+          ['China', 34], ['Djibouti', 12],
+          ['Nepal', 26], ['Equatorial Guinea', 3], ['Eritrea', 15],
+          ['Bhutan', 20], ['Gabon', 0], ['Gambia', 13], ['Ghana', 5],
+          ['Bangladesh', 25], ['Guinea-Bissau', 12], ['Kenya', -1],
+          ['Iran', 10], ['Liberia', 6], ['Libya', 32], ['Madagascar', null],
+          ['Tajikistan', 33], ['Malawi', -14], ['Mali', 12], ['Mauritania', 18],
+          ['Kyrgyzstan', -20], ['Mayotte', -13], ['Melilla', 35],
+          ['Thailand', 32], ['Mozambique', -25], ['Namibia', -22]
+        ]);
+
+        var options = {
+          region: '034', 
+          colorAxis: {colors: ['#FFA07A', '#FA8072', '#2E8B57']},
+          backgroundColor: '#fff',
+          datalessRegionColor: '#ffff',
+          defaultColor: '#ECE1E1'
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+        chart.draw(data, options);
+      };
+    </script>
+        
+    </body>
+   
+    
+</html>

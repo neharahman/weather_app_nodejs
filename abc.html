@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title> 
+		jQuery getJSON() Method 
+	</title> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+	
+	<!-- Script to get JSON file and display its content --> 
+	<script> 
+			
+				$.getJSON('/json_demo.json', function(emp) { 
+					$('#name').html(emp.name); 
+                    $('#min_temp').html(emp.main.temp_min);
+                    $('#max_temp').html(emp.main.temp_max); 
+					// $('#display').append('<p> Role: ' + emp.role+ '</p>'); 
+					// $('#display').append('<p> Company: ' + emp.company+ '</p>'); 
+			}); 
+	</script> 
+</head> 
+	
+<body>
+    <div class="container">
+        <div class="col-md-4">
+            <p id="name"></p>
+            <p id="min_temp"></p>
+            <p id="max_temp"></p>
+        </div>
+    </div>
+
+		 
+		
+</body> 
+</html> 
